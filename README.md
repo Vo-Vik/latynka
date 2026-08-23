@@ -72,12 +72,15 @@ This system utilizes all **26 letters of the standard ISO Basic Latin alphabet**
 
 | Pattern | IPA | Cyrillic | Description | Examples |
 | :---: | :---: | :---: | :--- | :--- |
-| **`ggz`** | `/ʒː/` | ЖЖ | Long voiced postalveolar fricative | `zbyggzja` `/zbiˈʒːɑ/` |
-| **`ssz`** | `/ʃː/` | ШШ | Long voiceless postalveolar fricative | `kassza` `/ˈkɑʃːɑ/` |
+| **`ttz`** | `/t͡sː/` | ЦЦ | Long alveolar affricate (hard / без Ь) | `abratzattzu` `/ɑbrɑˈt͡sɑt͡sːu/` |
+| **`ttzj`** / **`ttzju`** | `/t͡sʲːu/` | ЦЦЬ / ЦЦЮ | Long palatalized alveolar affricate (soft / з Ь) | `mittzju` `/ˈmit͡sʲːu/` |
+| **`ggz`** | `/ʒː/` | ЖЖ | Long voiced postalveolar fricative (hard) | `bizggzy` `/biˈʒːɪ/` |
+| **`ggzj`** / **`ggzja`** | `/ʒʲːɑ/` | ЖЖЬ / ЖЖЯ | Long palatalized postalveolar fricative (soft) | `zbyggzja` `/zbiˈʒʲːɑ/` |
+| **`ssz`** | `/ʃː/` | ШШ | Long voiceless postalveolar fricative (hard) | `kassza` `/ˈkɑʃːɑ/` |
+| **`sszj`** / **`sszju`** | `/ʃʲːu/` | ШШЬ / ШШЮ | Long palatalized postalveolar fricative (soft) | `kasszju` `/ˈkɑʃʲːu/` |
+| **`cc`** | `/t͡ʃː/` | ЧЧ | Long voiceless postalveolar affricate (hard) | `oblycca` `/ɔˈblɪt͡ʃːɑ/` |
+| **`ccj`** / **`ccja`** | `/t͡ʃʲːɑ/` | ЧЧЬ / ЧЧЯ | Long palatalized postalveolar affricate (soft) | `oblycja` `/ɔˈblɪt͡ʃʲːɑ/` |
 | **`ccz`** | `/t͡ʃː/` | ЩЩ | Long affricate complex | `zapycczaty` `/zɑpɪˈt͡ʃːɑtɪ/` |
-| **`ttz`** | `/t͡sʲː/` | ЦЦЬ | Long palatalized alveolar affricate | `mittzju` `/ˈmit͡sʲːu/` |
-| **`cc`** | `/t͡ʃː/` | ЧЧ | Long voiceless postalveolar affricate | `oblycja` `/ɔˈblɪt͡ʃːɑ/` |
-
 ---
 
 ## Bi-Directional Algorithmic Logic

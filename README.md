@@ -19,7 +19,7 @@ This system utilizes all **26 letters of the standard ISO Basic Latin alphabet**
 | **`e`** | Е | Standard vowel | `eran` $\leftrightarrow$ еран |
 | **`f`** | Ф | Standard consonant | `ferma` $\leftrightarrow$ ферма |
 | **`g`** | **Ґ** | Plosive [g] (mirrors `q`) | `ganok` $\leftrightarrow$ ґанок |
-| **`h`** | **’** | Silent break / Apostrophe marker | `mhaso` $\leftrightarrow$ м'ясо, `zdorovha` $\leftrightarrow$ здоров'я |
+| **`h`** | **’** | Voiceless vowel / Apostrophe marker | `mhaso` $\leftrightarrow$ м'ясо, `zdorovha` $\leftrightarrow$ здоров'я |
 | **`i`** | І | Softening vowel | `svit` $\leftrightarrow$ світ |
 | **`j`** | **Ь** | Soft sign / De-jotation marker | `bilj` $\leftrightarrow$ біль, `oljqa` $\leftrightarrow$ Ольга |
 | **`k`** | К | Standard consonant | `kolos` $\leftrightarrow$ колос |

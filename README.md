@@ -6,80 +6,77 @@ This system utilizes all **26 letters of the standard ISO Basic Latin alphabet**
 
 ---
 
-## Technical Specification
+## Phonetic IPA Mapping / Фонетична транскрипція IPA
 
-### 1. Alphabet Mapping (26/26 Letters)
+### 1. Base Alphabet (26 Letters)
 
-| Latin | Cyrillic / Sound | Notes & Rules | Examples |
-| :---: | :---: | :--- | :--- |
-| **`a`** | А | Standard vowel | `baba` $\leftrightarrow$ баба |
-| **`b`** | Б | Standard consonant | `brama` $\leftrightarrow$ брама |
-| **`c`** | **Ч** | Single-letter replacement for [ч] | `caszka` $\leftrightarrow$ чашка, `cystyy` $\leftrightarrow$ чистий |
-| **`d`** | Д | Standard consonant | `dim` $\leftrightarrow$ дім |
-| **`e`** | Е | Standard vowel | `eran` $\leftrightarrow$ еран |
-| **`f`** | Ф | Standard consonant | `ferma` $\leftrightarrow$ ферма |
-| **`g`** | **Ґ** | Plosive [g] (mirrors `q`) | `ganok` $\leftrightarrow$ ґанок |
-| **`h`** | **’** | Voiceless vowel / Apostrophe marker | `mhaso` $\leftrightarrow$ м'ясо, `zdorovha` $\leftrightarrow$ здоров'я |
-| **`i`** | І | Softening vowel | `svit` $\leftrightarrow$ світ |
-| **`j`** | **Ь** | Soft sign / De-jotation marker | `bilj` $\leftrightarrow$ біль, `oljqa` $\leftrightarrow$ Ольга |
-| **`k`** | К | Standard consonant | `kolos` $\leftrightarrow$ колос |
-| **`l`** | Л | Standard consonant | `lito` $\leftrightarrow$ літо |
-| **`m`** | М | Standard consonant | `mama` $\leftrightarrow$ мама |
-| **`n`** | Н | Standard consonant | `nis` $\leftrightarrow$ ніс |
-| **`o`** | О | Standard vowel | `ozero` $\leftrightarrow$ озеро |
-| **`p`** | П | Standard consonant | `pole` $\leftrightarrow$ поле |
-| **`q`** | **Г** | Fricative [h] (mirrors `g`) | `qolova` $\leftrightarrow$ голова, `eqoist` $\leftrightarrow$ елегантність |
-| **`r`** | Р | Standard consonant | `rika` $\leftrightarrow$ ріка |
-| **`s`** | С | Standard consonant | `sontze` $\leftrightarrow$ сонце |
-| **`t`** | Т | Standard consonant | `tato` $\leftrightarrow$ тато |
-| **`u`** | У | Standard vowel | `uran` $\leftrightarrow$ уран |
-| **`v`** | В | Labiodental [v] | `voda` $\leftrightarrow$ вода |
-| **`w`** | **Ў** | Non-syllabic [w] (endings/pre-consonant) | `pysaw` $\leftrightarrow$ писав, `vowk` $\leftrightarrow$ вовк |
-| **`x`** | **Х** | Single-letter replacement for [х] | `xlib` $\leftrightarrow$ хліб, `xata` $\leftrightarrow$ хата |
-| **`y`** | **И / Й** | [и] after consonants; [й] after vowels | `syn` $\leftrightarrow$ син, `cay` $\leftrightarrow$ чай |
-| **`z`** | **З** | Standard [з] & modifier for sibilants | `zyma` $\leftrightarrow$ зима |
-
----
-
-## 2. Sibilant Digraphs (Modifier `z`)
-
-Complex sibilant sounds are formed by combining base consonants with the modifier **`z`**:
-
-* **`cz`** = **Щ** (*czuka* $\leftrightarrow$ щука, *czedryy* $\leftrightarrow$ щедрий)
-* **`sz`** = **Ш** (*szkola* $\leftrightarrow$ школа)
-* **`gz`** = **Ж** (*gzaba* $\leftrightarrow$ жаба)
-* **`tz`** = **Ц** (*tzap* $\leftrightarrow$ цап)
-* **`dgz`** = **ДЖ** (*narodzgujutjsja* $\leftrightarrow$ народжуються)
-* **`dz`** = **ДЗ** (*dzvin* $\leftrightarrow$ дзвін)
+| Latin | IPA | Cyrillic | Context / Rules | Examples |
+| :---: | :---: | :---: | :--- | :--- |
+| **`a`** | `/a/` | А | Standard open front unrounded vowel | `baba` `/ˈbɑbɑ/` |
+| **`b`** | `/b/` | Б | Voiced bilabial plosive | `brama` `/ˈbrɑmɑ/` |
+| **`c`** | `/tʃ/` | Ч | Voiceless postalveolar affricate | `caszka` `/ˈtʃɑʃkɑ/` |
+| **`d`** | `/d/` | Д | Voiced alveolar plosive | `dim` `/dim/` |
+| **`e`** | `/ɛ/` | Е | Open-mid front unrounded vowel | `eran` `/ɛˈrɑn/` |
+| **`f`** | `/f/` | Ф | Voiceless labiodental fricative | `ferma` `/ˈfɛrmɑ/` |
+| **`g`** | `/ɡ/` | Ґ | Voiced velar plosive | `ganok` `/ˈɡɑnɔk/` |
+| **`h`** | `/∅/` | ’ | Voiceless vowel / Triggers jotation | `mhaso` `/ˈmjasɔ/` |
+| **`i`** | `/i/` | І | Close front unrounded vowel; Palatalizes previous consonant | `svit` `/sʲvit/` |
+| **`j`** | `/ʲ/` | Ь | Palatalization marker for consonants | `bilj` `/bilʲ/` |
+| **`k`** | `/k/` | К | Voiceless velar plosive | `kolos` `/ˈkɔlɔs/` |
+| **`l`** | `/l/` | Л | Alveolar lateral approximant | `lito` `/ˈlitɔ/` |
+| **`m`** | `/m/` | М | Bilabial nasal | `mama` `/ˈmɑmɑ/` |
+| **`n`** | `/n/` | Н | Alveolar nasal | `nis` `/nis/` |
+| **`o`** | `/ɔ/` | О | Open-mid back rounded vowel | `ozero` `/ˈɔzɛrɔ/` |
+| **`p`** | `/p/` | П | Voiceless bilabial plosive | `pole` `/ˈpɔlɛ/` |
+| **`q`** | `/ɦ/` | Г | Voiced glottal fricative | `qolova` `/ɦɔlɔˈvɑ/` |
+| **`r`** | `/r/` | Р | Alveolar trill | `rika` `/ˈrikɑ/` |
+| **`s`** | `/s/` | С | Voiceless alveolar sibilant | `sontze` `/ˈsɔnt͡sɛ/` |
+| **`t`** | `/t/` | Т | Voiceless alveolar plosive | `tato` `/ˈtɑtɔ/` |
+| **`u`** | `/u/` | У | Close back rounded vowel | `uran` `/uˈrɑn/` |
+| **`v`** | `/v/` | В | Voiced labiodental fricative | `voda` `/vɔˈdɑ/` |
+| **`w`** | `/u̯/` | Ў | Non-syllabic voiced labial-velar approximant | `pysaw` `/pɪˈsɑu̯/` |
+| **`x`** | `/x/` | Х | Voiceless velar fricative | `xlib` `/xlib/` |
+| **`y`** | `/ɪ/`, `/j/` | И / Й | `/ɪ/` after consonants; `/j/` after vowels or starting words | `syn` `/sɪn/`, `cay` `/t͡ʃɑj/` |
+| **`z`** | `/z/` | З | Voiced alveolar sibilant | `zyma` `/ˈzɪmɑ/` |
 
 ---
 
-## 3. Core Structural Rules
+### 2. Digraphs, Trigraphs & Sibilants
 
-### A. Automatic Jotation (Adjacent Vowels)
-When two vowels appear consecutively, the second vowel is **automatically iotated** without requiring additional `y` or `j` characters:
-* `ia` = **ія** (*maria* $\leftrightarrow$ марія)
-* `ie` = **іє** (*idea* $\leftrightarrow$ ідея)
-* `oi` = **ої** (*eqoist* $\leftrightarrow$ егоїст)
-* `ou` = **ою** (*svou* $\leftrightarrow$ свою)
-* `uu` = **ую** (*gzartuucy* $\leftrightarrow$ жартуючи)
+| Combination | IPA | Cyrillic | Description | Examples |
+| :---: | :---: | :---: | :--- | :--- |
+| **`cz`** | `/t͡ʃː/` | Щ | Long voiceless postalveolar affricate/fricative complex | `czuka` `/ˈt͡ʃːukɑ/` |
+| **`sz`** | `/ʃ/` | Ш | Voiceless postalveolar fricative | `szkola` `/ˈʃkɔlɑ/` |
+| **`gz`** | `/ʒ/` | Ж | Voiced postalveolar fricative | `gzaba` `/ˈʒɑbɑ/` |
+| **`tz`** | `/t͡s/` | Ц | Voiceless alveolar affricate | `tzap` `/t͡sɑp/` |
+| **`dz`** | `/d͡z/` | ДЗ | Voiced alveolar affricate | `dzvin` `/d͡zvʲin/` |
+| **`dgz`** | `/d͡ʒ/` | ДЖ | Voiced postalveolar affricate | `dgzmelj` `/d͡ʒmɛlʲ/` |
 
-### B. De-Jotation & Softening (`j`)
-* **Softening:** Placed after a consonant to represent **Ь** (*bilj* $\leftrightarrow$ біль, *paljanytzja* $\leftrightarrow$ паляниця).
-* **De-jotation:** Placed between adjacent vowels when jotation must be prevented (*zojopark* $\leftrightarrow$ зоопарк).
+---
 
-### C. Separation & Edge Cases (`h`)
-* **Apostrophe:** Acts as the soft-break marker for iotated vowels after hard consonants (*mhaso* $\leftrightarrow$ м'ясо).
-* **Digraph Disambiguation:** Inserted between consonants to prevent false digraph parsing (*shz* $\leftrightarrow$ сз, *qhz* $\leftrightarrow$ гз, *chz* $\leftrightarrow$ чз).
-* **Gemination Boundary:** Breaks non-geminated identical consonant boundaries (*zHzadu* $\leftrightarrow$ ззаду).
+### 3. Softening (Palatalization IPA Rules)
 
-### D. Gemination (Double Consonants)
-When doubling a digraph, **only the first character is duplicated**:
-* **ЖЖ** $\rightarrow$ **`ggz`** (*zbiggzja* $\leftrightarrow$ збіжжя)
-* **ШШ** $\rightarrow$ **`ssz`** (*kassza* $\leftrightarrow$ кашша)
-* **ЩЩ** $\rightarrow$ **`ccz`** (*zapycczaty* $\leftrightarrow$ запищщати)
-* **ЦЦ** $\rightarrow$ **`ttz`** (*mittzju* $\leftrightarrow$ міццю)
-* **ЧЧ** $\rightarrow$ **`cc`** (*oblycja* $\leftrightarrow$ обличчя)
+| Pattern | IPA Modifier | Cyrillic | Phonetic Effect | Examples |
+| :---: | :---: | :---: | :--- | :--- |
+| **`C + j`** | `/Cʲ/` | СЬ / ТЬ... | Palatalizes preceding consonant `C` | `bilj` `/bilʲ/`, `oljqa` `/ˈɔlʲɦɑ/` |
+| **`C + i`** | `/Cʲi/` | СІ / ТІ... | Palatalizes preceding consonant + vowel `/i/` | `lito` `/ˈlʲitɔ/` |
+| **`C + ja`** | `/Cʲɑ/` | СЯ / ЛЯ... | Palatalizes consonant + unrounded vowel `/ɑ/` | `paljanytzja` `/pɑlʲɑˈnɪt͡sʲɑ/` |
+| **`C + ju`** | `/Cʲu/` | СЮ / ЛЮ... | Palatalizes consonant + rounded vowel `/u/` | `ljudy` `/ˈlʲudɪ/` |
+| **`C + je`** | `/Cʲɛ/` | СЄ / ЛЄ... | Palatalizes consonant + mid vowel `/ɛ/` | `synje` `/ˈsɪnʲɛ/` |
+| **`V + V`** | `/V + jV/` | ІЯ / ОЇ... | Second vowel `/V/` automatically triggers `/j/` | `maria` `/mɑˈrijɑ/`, `eqoist` `/ɛɦɔˈjist/` |
+| **`C + h + V`**| `/C + jV/` | М'Я / В'Я... | Silent vowel `h` `/∅/` triggers iotated `/j/` | `mhaso` `/ˈmjɑsɔ/` |
+
+---
+
+### 4. Gemination IPA Rules
+
+| Pattern | IPA | Cyrillic | Description | Examples |
+| :---: | :---: | :---: | :--- | :--- |
+| **`ggz`** | `/ʒː/` | ЖЖ | Long voiced postalveolar fricative | `zbyggzja` `/zbiˈʒːɑ/` |
+| **`ssz`** | `/ʃː/` | ШШ | Long voiceless postalveolar fricative | `kassza` `/ˈkɑʃːɑ/` |
+| **`ccz`** | `/t͡ʃː/` | ЩЩ | Long affricate complex | `zapycczaty` `/zɑpɪˈt͡ʃːɑtɪ/` |
+| **`ttz`** | `/t͡sʲː/` | ЦЦЬ | Long palatalized alveolar affricate | `mittzju` `/ˈmit͡sʲːu/` |
+| **`cc`** | `/t͡ʃː/` | ЧЧ | Long voiceless postalveolar affricate | `oblycja` `/ɔˈblɪt͡ʃːɑ/` |
 
 ---
 

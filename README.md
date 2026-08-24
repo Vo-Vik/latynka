@@ -1,8 +1,8 @@
 # Ukrainian Latin Alphabet (ULAT) / Українська латинська абетка
 
-A fully deterministic, lossless (100% reversible), and diacritic-free Latin transliteration system for the Ukrainian language, with extended support for regional/dialectal phonemes (e.g., Lemko / Carpathian Rusyn `ŷ`).
+A fully deterministic, lossless (100% reversible), and 100% diacritic-free Latin transliteration system for the Ukrainian language, with extended support for regional/dialectal phonemes (e.g., Lemko / Carpathian Rusyn `yh`).
 
-This system utilizes all **26 letters of the standard ISO Basic Latin alphabet**. It guarantees exact bi-directional conversion between Cyrillic and Latin representations.
+This system utilizes strictly all **26 letters of the standard ISO Basic Latin alphabet** without any external accents or unicode diacritics. It guarantees exact bi-directional conversion between Cyrillic and Latin representations.
 
 ---
 
@@ -37,7 +37,7 @@ This system utilizes all **26 letters of the standard ISO Basic Latin alphabet**
 | **`w`** | `/u̯/` | **Ў** | Non-syllabic [w] (endings/pre-consonant) | `pysaw` `/pɪˈsɑu̯/` $\leftrightarrow$ писав |
 | **`x`** | `/x/` | **Х** | Single-letter replacement for [х] | `xlib` `/xlib/` $\leftrightarrow$ хліб |
 | **`y`** | `/ɪ/`, `/j/` | **И / Й** | `/ɪ/` after consonants; `/j/` after vowels | `syn` `/sɪn/` $\leftrightarrow$ син, `cay` `/t͡ʃɑj/` $\leftrightarrow$ чай |
-| **`ŷ`** | `/ɨ/` | **Ы / Ы̂** | Lemko / Rusyn close central unrounded vowel | `sŷn` `/sɨn/` $\leftrightarrow$ сын |
+| **`yh`** | `/ɨ/` | **Ы / Ы̂** | Lemko / Rusyn close central unrounded vowel | `syhn` `/sɨn/` $\leftrightarrow$ сын (лемк. *сын*) |
 | **`z`** | `/z/` | **З** | Standard [з] & modifier for sibilants | `zyma` `/ˈzɪmɑ/` $\leftrightarrow$ зима |
 
 ---
@@ -51,7 +51,7 @@ This system utilizes all **26 letters of the standard ISO Basic Latin alphabet**
 | **`gz`** | `/ʒ/` | **Ж** | Voiced postalveolar fricative | `gzaba` $\leftrightarrow$ жаба |
 | **`tz`** | `/t͡s/` | **Ц** | Voiceless alveolar affricate | `tzap` $\leftrightarrow$ цап |
 | **`dgz`** | `/d͡ʒ/` | **ДЖ** | Voiced postalveolar affricate | `narodzgujutjsja` $\leftrightarrow$ народжуються |
-| **`dz`** | `/d͡z/` | **ДЗ** | Voiced alveolar affricate | `dzvin` $\leftrightarrow$ дзвін |
+| **`dz`** | `/d͡z/` | **ДЗ** | Voiced alveolar affricate | `dzvin` `/d͡zvʲin/` $\leftrightarrow$ дзвін |
 
 ---
 
@@ -65,13 +65,22 @@ When two vowels appear consecutively, the second vowel is **automatically iotate
 * `ou` = **ою** (*svou* $\leftrightarrow$ свою)
 * `uu` = **ую** (*gzartuucy* $\leftrightarrow$ жартуючи)
 
-### B. Gemination Rule for Digraphs (Modifier `z` Doubling)
+### B. De-Jotation & Softening (`j`)
+* **Softening:** Placed after a consonant to represent **Ь** (`bilj` `/bilʲ/` $\leftrightarrow$ біль, `paljanytzja` $\leftrightarrow$ паляниця).
+* **De-Jotation:** Placed between adjacent vowels when jotation must be prevented (`zojopark` $\leftrightarrow$ зоопарк).
+
+### C. Separation & Edge Cases (`h`)
+* **Voiceless Vowel (Apostrophe):** `h` acts as a silent vowel `/∅/` that triggers automatic jotation for the following vowel after hard consonants (`mhaso` `/ˈmjasɔ/` $\leftrightarrow$ м'ясо).
+* **Digraph Disambiguation:** Inserted between consonants to prevent false digraph parsing (`shz` $\leftrightarrow$ сз vs `sz` $\leftrightarrow$ ш; `qhz` $\leftrightarrow$ гз vs `gz` $\leftrightarrow$ ж).
+* **Gemination Boundary:** Breaks non-geminated identical consonant boundaries across morpheme borders (`zHzadu` $\leftrightarrow$ ззаду).
+
+### D. Gemination Rule for Digraphs (Modifier `z` Doubling)
 When doubling a sibilant digraph, **the modifier letter `z` is duplicated (`zz`)**:
-* **ЖЖ** $\rightarrow$ **`gzz`** (тверде) / **`gzzj`**, **`gzzja`** (м'яке)
-* **ШШ** $\rightarrow$ **`szz`** (тверде) / **`szzj`**, **`szzju`** (м'яке)
+* **ЖЖ** $\rightarrow$ **`gzz`** (hard) / **`gzzj`**, **`gzzja`** (soft)
+* **ШШ** $\rightarrow$ **`szz`** (hard) / **`szzj`**, **`szzju`** (soft)
 * **ЩЩ** $\rightarrow$ **`czz`**
-* **ЦЦ** $\rightarrow$ **`tzz`** (тверде) / **`tzzj`**, **`tzzju`** (м'яке)
-* **ЧЧ** $\rightarrow$ **`cc`** (монолітна `c` подвоюється як `cc`) / **`ccj`**, **`ccja`** (м'яке)
+* **ЦЦ** $\rightarrow$ **`tzz`** (hard) / **`tzzj`**, **`tzzju`** (soft)
+* **ЧЧ** $\rightarrow$ **`cc`** (monolithic `c` doubles as `cc`) / **`ccj`**, **`ccja`** (soft)
 
 | Combination | IPA | Cyrillic | Description | Examples |
 | :---: | :---: | :---: | :--- | :--- |
@@ -109,7 +118,7 @@ def cyrillic_to_latin(text: str) -> str:
     # 2. Base mapping replacements
     charmap = {
         'а':'a', 'б':'b', 'в':'v', 'г':'q', 'ґ':'g', 'д':'d', 'е':'e', 'є':'ye',
-        'ж':'gz', 'з':'z', 'и':'y', 'ы':'ŷ', 'і':'i', 'ї':'yi', 'й':'y', 'к':'k', 
+        'ж':'gz', 'з':'z', 'и':'y', 'ы':'yh', 'і':'i', 'ї':'yi', 'й':'y', 'к':'k', 
         'л':'l', 'м':'m', 'н':'n', 'о':'o', 'п':'p', 'р':'r', 'с':'s', 'т':'t', 
         'у':'u', 'ф':'f', 'х':'x', 'ц':'tz', 'ч':'c', 'ш':'sz', 'щ':'cz', 'ь':'j', 
         'ю':'yu', 'я':'ya', "'":'h', '’':'h'

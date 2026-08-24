@@ -86,7 +86,7 @@ When doubling a sibilant digraph, **the modifier letter `z` is duplicated (`zz`)
 | :---: | :---: | :---: | :--- | :--- |
 | **`tzz`** | `/t͡sː/` | ЦЦ | Long alveolar affricate (hard) | `abratzatzzu` $\leftrightarrow$ обрацацу |
 | **`tzzj`** / **`tzzju`** | `/t͡sʲːu/` | ЦЦЬ / ЦЦЮ | Long palatalized alveolar affricate (soft) | `mitzzju` `/ˈmit͡sʲːu/` $\leftrightarrow$ міццю |
-| **`gzz`** | `/ʒː/` | ЖЖ | Long voiced postalveolar fricative (hard) | `bizgzzy` $\leftrightarrow$ біжжи |
+| **`gzz`** | `/ʒː/` | ЖЖ | Long voiced postalveolar fricative (hard) | `bigzzy` $\leftrightarrow$ біжжи |
 | **`gzzj`** / **`gzzja`** | `/ʒʲːɑ/` | ЖЖЬ / ЖЖЯ | Long palatalized postalveolar fricative (soft) | `zbigzzja` `/zbiˈʒʲːɑ/` $\leftrightarrow$ збіжжя |
 | **`szz`** | `/ʃː/` | ШШ | Long voiceless postalveolar fricative (hard) | `kaszza` $\leftrightarrow$ кашша |
 | **`szzj`** / **`szzju`** | `/ʃʲːu/` | ШШЬ / ШШЮ | Long palatalized postalveolar fricative (soft) | `kaszzju` $\leftrightarrow$ кашшю |
